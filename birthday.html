@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance Happy Birthday ❤️</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 650px;
+      position: relative;
+      z-index: 1;
+      animation: popIn 1.5s ease;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.8em;
+      color: #d6336c;
+      margin: 0 0 15px;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d; }
+      to   { text-shadow: 0 0 20px #fff, 0 0 40px #ff1e56; }
+    }
+
+    #wish {
+      font-size: 1.3em;
+      color: #444;
+      margin-bottom: 20px;
+      min-height: 50px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      background: #d6336c;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background: #a61e4d;
+      transform: scale(1.1);
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 20px;
+      animation: floatUp 6s linear forwards;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-800px) scale(1.5); opacity: 0; }
+    }
+
+    /* Rose petals */
+    .petal {
+      position: absolute;
+      color: #d6336c;
+      font-size: 25px;
+      animation: fall 8s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
+    }
+
+    /* Sparkles */
+    .sparkle {
+      position: absolute;
+      color: gold;
+      font-size: 15px;
+      animation: twinkle 2s infinite alternate;
+      opacity: 0.8;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.3; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* Dudu GIF floating */
+    .gif {
+      width: 180px;
+      position: absolute;
+      animation: floatSide 8s ease-in-out infinite;
+      top: 65%;
+      left: 5%;
+      z-index: 1;
+    }
+
+    @keyframes floatSide {
+      0% { transform: translateY(0) translateX(0); }
+      25% { transform: translateY(-20px) translateX(20px); }
+      50% { transform: translateY(0) translateX(0); }
+      75% { transform: translateY(-20px) translateX(-20px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+
+    /* Love birds */
+    .birds {
+      position: absolute;
+      top: 20%;
+      left: -100px;
+      width: 120px;
+      animation: fly 15s linear infinite;
+    }
+
+    @keyframes fly {
+      from { left: -120px; top: 20%; }
+      to { left: 110%; top: 10%; }
+    }
+
+    /* Glowing love message */
+    .love-message {
+      font-size: 1.2em;
+      color: #a61e4d;
+      font-weight: bold;
+      margin-top: 20px;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { opacity: 0.6; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Advance Happy Birthday ❤️</h1>
+    <p id="wish"></p>
+    <p class="love-message">💖 You are always special & loved beyond words 💖</p>
+    <button class="btn" onclick="showSurprise()">Click for a Surprise 🎁</button>
+  </div>
+
+  <!-- Dudu GIF -->
+  <img src="dudu.gif.gif" alt="Dudu" class="gif">
+
+  <!-- Love Birds (use your birds.png/gif) -->
+  <img src="bird.gif" alt="Love Birds" class="birds">
+
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="happy.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <script>
+    // Surprise button
+    function showSurprise() {
+      alert("💖 Advance Happy Birthday! 🎂✨ Love, joy & blessings always!");
+      confetti({ particleCount: 250, spread: 120, origin: { y: 0.7 } });
+    }
+
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => { heart.remove(); }, 6000);
+    }
+    setInterval(createHeart, 600);
+
+    // Falling rose petals
+    function createPetal() {
+      const petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.innerText = "🌹";
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.fontSize = Math.random() * 20 + 20 + "px";
+      document.body.appendChild(petal);
+      setTimeout(() => { petal.remove(); }, 8000);
+    }
+    setInterval(createPetal, 900);
+
+    // Sparkles
+    function createSparkle() {
+      const sparkle = document.createElement("div");
+      sparkle.classList.add("sparkle");
+      sparkle.innerText = "✨";
+      sparkle.style.left = Math.random() * 100 + "vw";
+      sparkle.style.top = Math.random() * 100 + "vh";
+      document.body.appendChild(sparkle);
+      setTimeout(() => { sparkle.remove(); }, 2000);
+    }
+    setInterval(createSparkle, 700);
+
+    // Typewriter effect
+    const text = "Wishing you in advance 🎉... May your birthday bring happiness, love, roses 🌹, sparkles ✨, and endless joy 💕";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("wish").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
